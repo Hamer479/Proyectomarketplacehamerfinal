@@ -1,4 +1,4 @@
-package com.example.proyectomarketplacehamerfinal;
+package com.example.proyectomarketplacehamerfinal.model;
 
 public class Producto {
     private String id;

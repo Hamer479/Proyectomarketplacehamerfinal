@@ -1,4 +1,4 @@
-package com.example.proyectomarketplacehamerfinal;
+package com.example.proyectomarketplacehamerfinal.adapter;
 
 import android.content.Context;
 import android.content.Intent;

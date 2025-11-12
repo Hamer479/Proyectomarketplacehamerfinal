@@ -12,8 +12,8 @@ import androidx.cardview.widget.CardView; // Importado basado en el XML (card_me
 import androidx.constraintlayout.widget.ConstraintLayout; // Importado P.121
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.diegodev.marketplace.R;
-import com.diegodev.marketplace.model.Mensaje;
+import com.example.proyectomarketplacehamerfinal.R;
+import com.example.proyectomarketplacehamerfinal.model.Mensaje;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
