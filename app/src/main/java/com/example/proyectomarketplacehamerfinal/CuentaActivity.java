@@ -1,11 +1,18 @@
 package com.example.proyectomarketplacehamerfinal;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.button.MaterialButton;
+import com.google.android.material.navigation.NavigationBarView;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class CuentaActivity extends AppCompatActivity {
 
@@ -22,10 +29,13 @@ public class CuentaActivity extends AppCompatActivity {
     private MaterialButton btnEliminarAnuncios;
     private MaterialButton btnCerrarSesion;
 
+    // Elementos de Navegación Inferior
+    private BottomNavigationView bottomNav;
+    private FloatingActionButton fabPublicar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        // Debe coincidir con el nombre de tu layout XML
         setContentView(R.layout.activity_cuenta);
 
         // 1. Configurar la Toolbar
@@ -41,6 +51,11 @@ public class CuentaActivity extends AppCompatActivity {
         // 4. Inicializar y Configurar Listeners para los Botones
         inicializarBotonesOpciones();
         configurarListenersBotones();
+
+
+
+        //Configuración de la Cabecera
+        configurarCabecera();
     }
 
     private void inicializarVistasInformacion() {
@@ -69,19 +84,19 @@ public class CuentaActivity extends AppCompatActivity {
     }
 
     private void configurarListenersBotones() {
+
         btnEditarPerfil.setOnClickListener(v -> {
-            Toast.makeText(this, "Navegar a Editar Perfil", Toast.LENGTH_SHORT).show();
-            // Lógica para Intent a EditarPerfil Activity
+            Intent intent = new Intent(CuentaActivity.this, EditarPerfilActivity.class);
+            startActivity(intent);
         });
 
         btnCambiarPassword.setOnClickListener(v -> {
-            Toast.makeText(this, "Navegar a Cambiar Contraseña", Toast.LENGTH_SHORT).show();
-            // Lógica para Intent a CambiarPasswordActivity
+            Intent intent = new Intent(CuentaActivity.this, CambiarPasswordActivity.class);
+            startActivity(intent);
         });
 
         btnEliminarAnuncios.setOnClickListener(v -> {
-            Toast.makeText(this, "Mostrar diálogo de confirmación para eliminar anuncios",
-                    Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Mostrar diálogo de confirmación para eliminar anuncios", Toast.LENGTH_SHORT).show();
             // Lógica para mostrar AlertDialog
         });
 
@@ -89,5 +104,11 @@ public class CuentaActivity extends AppCompatActivity {
             Toast.makeText(this, "Cerrando sesión...", Toast.LENGTH_SHORT).show();
             // Lógica para cerrar sesión (Firebase/SharedPreferences) y navegar a LoginActivity
         });
+
+    }
+    private void configurarCabecera() {
+        // Listener para el botón de retroceso (flecha <- )
+        ImageButton btnBack = findViewById(R.id.btnBack);
+        btnBack.setOnClickListener(v -> finish());
     }
 }
