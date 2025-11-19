@@ -1,6 +1,7 @@
 import org.gradle.api.JavaVersion
 plugins {
     alias(libs.plugins.android.application)
+    id("com.google.gms.google-services")
 }
 //id("com.google.gms.google-services")
 android {
@@ -32,6 +33,7 @@ android {
 }
 
 dependencies {
+    implementation("com.hbb20:ccp:2.7.0")
     implementation(libs.appcompat)
     implementation("com.google.android.material:material:1.11.0")
     implementation(libs.activity)
@@ -44,6 +46,12 @@ dependencies {
     /*implementation("com.google.firebase:firebase-auth:22.3.0")
     implementation("com.google.firebase:firebase-firestore:24.10.3")
     implementation("com.google.firebase:firebase-storage:20.3.0")*/
+
+    implementation(platform("com.google.firebase:firebase-bom:34.5.0"))
+    implementation("com.google.firebase:firebase-analytics")
+    implementation("com.google.firebase:firebase-auth")
+    implementation("com.google.firebase:firebase-database")
+
 
     // La librería principal (runtime)
     implementation("com.github.bumptech.glide:glide:4.16.0")
