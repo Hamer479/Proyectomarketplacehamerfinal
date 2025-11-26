@@ -260,8 +260,7 @@ public class EditarPerfilActivity extends AppCompatActivity {
         hashMap.put("codigoTelefono", "" + codigoTelefono);
         String uid = firebaseAuth.getUid();
         if (uid != null) {
-            DatabaseReference ref = FirebaseDatabase.getInstance().getReference("users"); //
-            Colección consistente: users
+            DatabaseReference ref = FirebaseDatabase.getInstance().getReference("users"); // Colección consistente: users
             ref.child(uid)
                     .updateChildren(hashMap)
                     .addOnSuccessListener(aVoid -> {
@@ -290,8 +289,7 @@ public class EditarPerfilActivity extends AppCompatActivity {
             Toast.makeText(this, "Error: Usuario no autenticado.", Toast.LENGTH_SHORT).show();
             return;
         }
-        DatabaseReference ref = FirebaseDatabase.getInstance().getReference("users"); //
-        Colección consistente: users
+        DatabaseReference ref = FirebaseDatabase.getInstance().getReference("users"); //Colección consistente: users
         ref.child(uid).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {

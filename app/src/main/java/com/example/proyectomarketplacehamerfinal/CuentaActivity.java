@@ -137,8 +137,7 @@ public class CuentaActivity extends AppCompatActivity {
                                 .placeholder(DEFAULT_PROFILE_IMAGE) // Se muestra mientras carga
                                 .error(DEFAULT_PROFILE_IMAGE) // Se muestra si falla la carga
                                 .into(imgPerfil);
-                        Log.d("CuentaActivity", "Foto de perfil cargada correctamente desde Firebase
-                                URL.");
+                        Log.d("CuentaActivity", "Foto de perfil cargada correctamente desde Firebase URL.");
                     } catch (Exception e) {
                         Log.e("GLIDE_ERROR", "Error al cargar la imagen con Glide", e);
                         imgPerfil.setImageResource(DEFAULT_PROFILE_IMAGE);

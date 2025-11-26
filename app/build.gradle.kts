@@ -43,9 +43,9 @@ dependencies {
     implementation("androidx.cardview:cardview:1.0.0")
 
     // Firebase (se mantienen comentadas)
-    /*implementation("com.google.firebase:firebase-auth:22.3.0")
+    implementation("com.google.firebase:firebase-auth:22.3.0")
     implementation("com.google.firebase:firebase-firestore:24.10.3")
-    implementation("com.google.firebase:firebase-storage:20.3.0")*/
+    implementation("com.google.firebase:firebase-storage:20.3.0")
 
     implementation(platform("com.google.firebase:firebase-bom:34.5.0"))
     implementation("com.google.firebase:firebase-analytics")
